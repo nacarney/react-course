@@ -5,6 +5,7 @@ import { Route } from "react-router-dom";
 import AllMeetupsPage from "./pages/AllMeetups";
 import NewMeetupsPage from "./pages/NewMeetup";
 import FavoritesPage from "./pages/Favorites";
+import MainNavigation from "./components/layout/MainNavigation";
 
 function App() {
   // domain eg is localhost:3000 or my-page.com
@@ -15,6 +16,7 @@ function App() {
 
   return (
     <div>
+      <MainNavigation />
        <Routes>
         <Route path="/" element={<AllMeetupsPage />} />
         <Route path="/new-meetup" element={<NewMeetupsPage />} />
