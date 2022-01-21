@@ -13,7 +13,7 @@ function Modal(props) {
         <button className='btn btn--alt' onClick={cancelHandler}>
           Cancel
         </button>
-        <button className='btn' onClick={confirmHandler}>
+        <button className='btn' onClick={confirmHandler}> 
           Confirm
         </button>
       </div>
