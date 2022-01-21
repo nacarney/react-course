@@ -5,7 +5,7 @@ import { Route } from "react-router-dom";
 import AllMeetupsPage from "./pages/AllMeetups";
 import NewMeetupsPage from "./pages/NewMeetup";
 import FavoritesPage from "./pages/Favorites";
-import MainNavigation from "./components/layout/MainNavigation";
+import Layout from "./components/layout/Layout";
 
 function App() {
   // domain eg is localhost:3000 or my-page.com
@@ -15,14 +15,13 @@ function App() {
   // <Route path = '/favorites'> <FavoritesPage /> <Route>
 
   return (
-    <div>
-      <MainNavigation />
+    <Layout>
        <Routes>
         <Route path="/" element={<AllMeetupsPage />} />
         <Route path="/new-meetup" element={<NewMeetupsPage />} />
         <Route path="/favorites" element={<FavoritesPage />} />
       </Routes>
-    </div>
+    </Layout>
   );
 }
 
