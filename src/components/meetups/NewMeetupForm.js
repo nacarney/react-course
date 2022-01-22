@@ -2,7 +2,8 @@ import { useRef } from "react";
 import Card from "../ui/Card";
 import classes from "./NewMeetupForm.module.css";
 
-function NewMeetupForm() {
+// props, as we are sending inputted data to NewMeetup.js, the parent component for this component
+function NewMeetupForm(props) {
   const titleInputRef = useRef();
   const imageInputRef = useRef();
   const addressInputRef = useRef();
@@ -23,7 +24,7 @@ function NewMeetupForm() {
       description: enteredDescription,
     };
 
-    console.log(meetupData);
+    props.onAddMeetup(meetupData);
   }
 
   return (
@@ -50,7 +51,7 @@ function NewMeetupForm() {
             ref={descriptionInputRef}
           ></textarea>
         </div>
-        <div className={classes.action}>
+        <div className={classes.actions}>
           <button>Add Meetup</button>
         </div>
       </form>
