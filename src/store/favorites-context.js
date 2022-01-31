@@ -34,12 +34,12 @@ export function FavoritesContextProvider(props) {
     }
 
     function itemIsFavoriteHandler(meetupId){
-        return userFavorites.some(meetup => meetup.id == meetupId );
+        return userFavorites.some(meetup => meetup.id === meetupId );
     }
 
     const context = {
         favorites: userFavorites,
-        totalFavorites = userFavorites.length,
+        totalFavorites: userFavorites.length,
         // you can add a function to change the Favorites values from different components, you add in a POINTER in the context object 
         // which 'points' to the functions which add or remove etc a new component to the object
         addFavorite: addFavoriteHandler,
@@ -49,7 +49,7 @@ export function FavoritesContextProvider(props) {
 
 
   return (
-    <FavoritesContext.Provider>{props.children}</FavoritesContext.Provider>
+    <FavoritesContext.Provider value= {context}>{props.children}</FavoritesContext.Provider>
   );
 }
 
